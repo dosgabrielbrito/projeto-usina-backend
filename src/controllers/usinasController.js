@@ -57,13 +57,13 @@ class UsinasController {
       //Data de Atualização:
       const now = new Date();
       const dataAtualizacao = await logs.updateOne(
-        { id: '1' },
+        { idData: '1' },
         { data: now },
         { upsert: true }
       );
 
       //Retorno API
-      res.status(200).send({ dataAtualizacao, usinasAtualizacao });
+      res.status(200).send({ dataAtaulizacao: now, usinasAtualizacao });
       next();
     } catch (erro) {
       next(erro);
